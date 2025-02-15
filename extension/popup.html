@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hack Fund</title>
+  <style>
+    body { 
+      font-family: 'Roboto', sans-serif; 
+      padding: 10px; 
+      background-color: #121212; 
+      color: #ffffff; 
+      width: 300px;
+      height: 400px;
+    }
+    h1 {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 14px;
+      color: #ffffff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+    .dashboard {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .card {
+      padding: 15px;
+      background-color: #1e1e1e;
+      border-radius: 5px;
+      text-align: center;
+      border-left: 5px solid;
+    }
+    .card:nth-child(1) {
+      border-color: #ff6f61;
+    }
+    .card:nth-child(2) {
+      border-color: #6b5b95;
+    }
+    .card:nth-child(3) {
+      border-color: #88b04b;
+    }
+    .card:nth-child(4) {
+      border-color: #f7cac9;
+    }
+    .card h2 {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .card p {
+      font-size: 12px;
+      margin: 5px 0;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>Hack Fund Dashboard</h1>
+  <a href="https://hackclub.slack.com/archives/C08DBU19S3B" class="button" target="_blank">Join our Slack Channel</a>
+  <div class="dashboard">
+    <div class="card">
+      <h2>Total Earnings</h2>
+      <p>$<span id="total-earnings">0.00</span></p>
+    </div>
+    <div class="card">
+      <h2>CPM</h2>
+      <p>$<span id="cpm">0.00</span></p>
+    </div>
+    <div class="card">
+      <h2>Site Visits</h2>
+      <p><span id="site-visits">0</span></p>
+    </div>
+    <div class="card">
+      <h2>Earnings per Visit</h2>
+      <p>$<span id="earnings-per-visit">0.00</span></p>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
