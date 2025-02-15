@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Hack Fund",
+    "version": "1.0",
+    "description": "Hack Fund is a community-driven funding program designed to support the Hack Club community.",
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "permissions": [
+    "scripting",
+    "webNavigation"
+    ],
+    "host_permissions": [
+      "<all_urls>"
+    ]
+  }
+  
