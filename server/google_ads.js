@@ -1,39 +1,49 @@
-(function() {
+(function () {
     function insertAutoAds() {
-        var adsScript = document.querySelector('script[src*="pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]');
+        const clientID = "ca-pub-2030059074984615";
+        const slotID = "4612254692";
+
+        // Check if AdSense script is already loaded
+        let adsScript = document.querySelector('script[src*="adsbygoogle.js"]');
         if (!adsScript) {
-            adsScript = document.createElement('script');
+            adsScript = document.createElement("script");
             adsScript.async = true;
-            adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2030059074984615"; // Client token here
-            adsScript.setAttribute('crossorigin', 'anonymous');
+            adsScript.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${clientID}`;
+            adsScript.setAttribute("crossorigin", "anonymous");
             document.head.appendChild(adsScript);
         }
-        
-        var adContainer = document.createElement('ins');
-        adContainer.className = 'adsbygoogle';
-        adContainer.style.display = 'block';
-        adContainer.setAttribute('data-ad-format', 'autorelaxed');
-        adContainer.setAttribute('data-ad-client', 'ca-pub-2030059074984615'); // Client token here
-        adContainer.setAttribute('data-ad-slot', '4612254692'); // Slot token here
-        
+
+        // Create ad container exactly like Google's example
+        const adContainer = document.createElement("ins");
+        adContainer.className = "adsbygoogle";
+        adContainer.style.display = "block";
+        adContainer.setAttribute("data-ad-client", clientID);
+        adContainer.setAttribute("data-ad-slot", slotID);
+        adContainer.setAttribute("data-ad-format", "auto");
+        adContainer.setAttribute("data-full-width-responsive", "true");
+
         document.body.appendChild(adContainer);
-        
+
         function pushAds() {
             try {
                 (window.adsbygoogle = window.adsbygoogle || []).push({});
             } catch (e) {
-                console.error("Error initializing AdSense auto ads:", e);
+                console.error("AdSense error:", e);
             }
         }
-        
+
         if (window.adsbygoogle && typeof window.adsbygoogle.push === "function") {
             pushAds();
         } else {
-            adsScript.addEventListener('load', pushAds);
-            setTimeout(pushAds, 1000);
+            adsScript.addEventListener("load", pushAds);
         }
     }
 
-    window.insertAutoAds = insertAutoAds;
+    // Wait for DOM to be ready before inserting
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", insertAutoAds);
+    } else {
+        insertAutoAds();
+    }
 })();
-insertAutoAds();
+
