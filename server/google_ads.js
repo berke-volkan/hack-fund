@@ -4,7 +4,7 @@
         if (!adsScript) {
             adsScript = document.createElement('script');
             adsScript.async = true;
-            adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client="; // Client token here
+            adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-app-pub-2030059074984615~2380024786"; // Client token here
             adsScript.setAttribute('crossorigin', 'anonymous');
             document.head.appendChild(adsScript);
         }
@@ -13,8 +13,8 @@
         adContainer.className = 'adsbygoogle';
         adContainer.style.display = 'block';
         adContainer.setAttribute('data-ad-format', 'autorelaxed');
-        adContainer.setAttribute('data-ad-client', ''); // Client token here
-        adContainer.setAttribute('data-ad-slot', ''); // Slot token here
+        adContainer.setAttribute('data-ad-client', 'ca-app-pub-2030059074984615~2380024786'); // Client token here
+        adContainer.setAttribute('data-ad-slot', 'ca-app-pub-2030059074984615/4142315553'); // Slot token here
         
         document.body.appendChild(adContainer);
         
